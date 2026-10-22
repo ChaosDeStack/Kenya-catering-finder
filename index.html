@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Catering Finder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kenya Catering Finder</h1>
+        <nav>
+            <a href="#caterers">Caterers</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#events">Events</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="event form" arial-labelledby="plan-heading">
+            <h2 id="plan-heading">Plan your event</h2>
+            <form id="budget-form" novalidate>
+                <label for="event name">Event name</label>
+                <input type="text" id="event name">
+                <label for="budget">Total budget</label>
+                <input type="number" id="budget" min="1">
+                <label for="guests">Number of guests</label>
+                <input type="number" id="guests" min="1">
+                <button type="submit">Calculate</button>
+                <button type="button" id="save-event">Save event</button>
+            </form>>
+            <p id="per-guest-result" aria-live="polite">KES ___ per guest</p>
+        </section>
+
+        <section id="caterers" aria-labelledby="find-heading">
+            <h2 id="find-heading">Find caterers</h2>
+            <div class="filters">
+                <label for="cuisine-filter">Cuisine</label>
+                <select id="cuisine-filter">
+                    <option value="all">All cuisines</option>
+                    <option value="Kenyan">Kenyan</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Continental">Continental</option>
+                </select>
+                <label for="max-price">Max price per guest (KES)</label>
+                <input type="number" id="max-price" min="0">
+
+                <label for="min-rating">Minimum rating</label>
+                <select id="min-rating">
+                    <option value="0">Any rating</option>
+                    <option value="3">3 stars and above</option>
+                    <option value="4">4 stars and above</option>
+                    <option value="5">5 stars only</option>
+                </select>
+                <button type="button" id="clear-filters">Clear</button>
+            </div>
+            <p id="status" aria-live="polite"></p>
+            <div id="caterer-list" class="card-grid"></div>
+        </section>
+
+        <section id="reviews" aria-labelledby="reviews-heading">
+            <h2 id="reviews-heading">Reviews</h2>
+            <form id="review-form" novalidate>
+                <label for="review-caterer">Caterer</label>
+                <select id="review-caterer"></select>
+                <label for="review-rating">Rating</label>
+                <select id="review-rating">
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+                <label for="review-name">Your name</label>
+                <input type="text" id="review-name">
+                <label for="review-comment">Comment</label>
+                <textarea id="review-comment" rows="3"></textarea>
+                <button type="submit">Submit review</button>
+            </form>
+            <p id="review-status" aria-live="polite"></p>
+            <ul id="review-list"></ul>
+        </section>
+
+        <section id="events" aria-labelledby="events-heading">
+            <h2 id="events-heading">My event requests</h2>
+            <ul id="event-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kenya Catering Finder. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
