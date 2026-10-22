@@ -30,32 +30,38 @@
                 <button type="submit">Calculate</button>
                 <button type="button" id="save-event">Save event</button>
             </form>>
-             <p id="per-guest-result" aria-live="polite">KES ___ per guest</p>
+            <p id="per-guest-result" aria-live="polite">KES ___ per guest</p>
         </section>
 
         <section id="caterers" aria-labelledby="find-heading">
-      <h2 id="find-heading">Find caterers</h2>
-      <div class="filters">
-        <label for="cuisine-filter">Cuisine</label>
-        <select id="cuisine-filter">
-          <option value="all">All cuisines</option>
-          <option value="Kenyan">Kenyan</option>
-          <option value="Indian">Indian</option>
-          <option value="Continental">Continental</option>
-        </select>
-        <label for="max-price">Max price per guest (KES)</label>
-        <input type="number" id="max-price" min="0">
-        <button type="button" id="clear-filters">Clear</button>
-      </div>
-      <p id="status" aria-live="polite"></p>
-      <div id="caterer-list" class="card-grid"></div>
-    </section>
+            <h2 id="find-heading">Find caterers</h2>
+            <div class="filters">
+                <label for="cuisine-filter">Cuisine</label>
+                <select id="cuisine-filter">
+                    <option value="all">All cuisines</option>
+                    <option value="Kenyan">Kenyan</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Continental">Continental</option>
+                </select>
+                <label for="max-price">Max price per guest (KES)</label>
+                <input type="number" id="max-price" min="0">
+                <button type="button" id="clear-filters">Clear</button>
+            </div>
+            <p id="status" aria-live="polite"></p>
+            <div id="caterer-list" class="card-grid"></div>
+        </section>
 
-     <section id="events" aria-labelledby="events-heading">
-      <h2 id="events-heading">My event requests</h2>
-      <ul id="event-list"></ul>
-    </section>
+        <section id="events" aria-labelledby="events-heading">
+            <h2 id="events-heading">My event requests</h2>
+            <ul id="event-list"></ul>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Kenya Catering Finder. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
 
 </body>
 
