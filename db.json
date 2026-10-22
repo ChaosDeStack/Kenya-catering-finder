@@ -1,0 +1,15 @@
+{
+  "caterers": [
+    { "id": 1, "name": "Mama Pilau Catering", "cuisine": "Kenyan", "location": "Nairobi", "pricePerGuest": 650, "description": "Pilau, chapati and stews for weddings and funerals." },
+    { "id": 2, "name": "Karibu Events", "cuisine": "Continental", "location": "Thika", "pricePerGuest": 800, "description": "Buffet setups for graduations and corporate events." },
+    { "id": 3, "name": "Nyama Choma Hub", "cuisine": "Kenyan", "location": "Kiambu", "pricePerGuest": 450, "description": "Grilled meats and traditional sides." },
+    { "id": 4, "name": "Spice Route Caterers", "cuisine": "Indian", "location": "Nairobi", "pricePerGuest": 950, "description": "Biryani, curries and samosas." },
+    { "id": 5, "name": "Royal Banquet Kenya", "cuisine": "Continental", "location": "Mombasa", "pricePerGuest": 1200, "description": "Premium plated dining for big occasions." }
+  ],
+  "events": [],
+  "reviews": [
+    { "id": 1, "catererId": 1, "name": "Wanjiku", "rating": 5, "comment": "The pilau was amazing." },
+    { "id": 2, "catererId": 1, "name": "Otieno", "rating": 4, "comment": "Good food, arrived a bit late." },
+    { "id": 3, "catererId": 3, "name": "Amina", "rating": 5, "comment": "Best nyama choma in Kiambu." }
+  ]
+}
