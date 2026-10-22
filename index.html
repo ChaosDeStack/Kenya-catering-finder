@@ -13,6 +13,7 @@
         <h1>Kenya Catering Finder</h1>
         <nav>
             <a href="#caterers">Caterers</a>
+            <a href="#reviews">Reviews</a>
             <a href="#events">Events</a>
         </nav>
     </header>
@@ -45,10 +46,41 @@
                 </select>
                 <label for="max-price">Max price per guest (KES)</label>
                 <input type="number" id="max-price" min="0">
+
+                <label for="min-rating">Minimum rating</label>
+                <select id="min-rating">
+                    <option value="0">Any rating</option>
+                    <option value="3">3 stars and above</option>
+                    <option value="4">4 stars and above</option>
+                    <option value="5">5 stars only</option>
+                </select>
                 <button type="button" id="clear-filters">Clear</button>
             </div>
             <p id="status" aria-live="polite"></p>
             <div id="caterer-list" class="card-grid"></div>
+        </section>
+
+        <section id="reviews" aria-labelledby="reviews-heading">
+            <h2 id="reviews-heading">Reviews</h2>
+            <form id="review-form" novalidate>
+                <label for="review-caterer">Caterer</label>
+                <select id="review-caterer"></select>
+                <label for="review-rating">Rating</label>
+                <select id="review-rating">
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+                <label for="review-name">Your name</label>
+                <input type="text" id="review-name">
+                <label for="review-comment">Comment</label>
+                <textarea id="review-comment" rows="3"></textarea>
+                <button type="submit">Submit review</button>
+            </form>
+            <p id="review-status" aria-live="polite"></p>
+            <ul id="review-list"></ul>
         </section>
 
         <section id="events" aria-labelledby="events-heading">
