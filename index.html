@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Catering Finder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kenya Catering Finder</h1>
+        <nav>
+            <a href="#caterers">Caterers</a>
+            <a href="#events">Events</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="event form" arial-labelledby="plan-heading">
+            <h2 id="plan-heading">Plan your event</h2>
+            <form id="budget-form" novalidate>
+                <label for="event name">Event name</label>
+                <input type="text" id="event name">
+                <label for="budget">Total budget</label>
+                <input type="number" id="budget" min="1">
+                <label for="guests">Number of guests</label>
+                <input type="number" id="guests" min="1">
+                <button type="submit">Calculate</button>
+                <button type="button" id="save-event">Save event</button>
+            </form>>
+             <p id="per-guest-result" aria-live="polite">KES ___ per guest</p>
+        </section>
+    </main>
+
+</body>
+
+</html>
