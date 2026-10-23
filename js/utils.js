@@ -18,3 +18,17 @@ export function filterCaterers(caterers, reviews, { cuisine, maxPrice, minRating
     return matchesCuisine && matchesPrice && rating >= minRating;
   });
 }
+
+export function validateEvent({ name, budget, guests }) {
+  if (!name || name.trim().length < 2) return "Event name must be at least 2 characters.";
+  if (!Number.isFinite(budget) || budget <= 0) return "Budget must be a number above 0.";
+  if (!Number.isInteger(guests) || guests <= 0) return "Guests must be a whole number above 0.";
+  return "";
+}
+
+export function validateReview({ name, comment, catererId }) {
+  if (!catererId) return "Please choose a caterer.";
+  if (!name || name.trim().length < 2) return "Please enter your name.";
+  if (!comment || comment.trim().length < 5) return "Comment must be at least 5 characters.";
+  return "";
+}
