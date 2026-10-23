@@ -1,5 +1,5 @@
-import { getCaterers, getReviews } from "./api.js";
-import { renderCaterers, showMessage } from "./ui.js";
+import { getCaterers, getReviews, getEvents, createEvent, deleteEvent } from "./api.js";
+import { renderCaterers, renderEvents, showMessage } from "./ui.js";
 import { calculatePerGuest, filterCaterers } from "./utils.js";
 
 let allCaterers = [];
