@@ -15,3 +15,24 @@ export async function getReviews() {
   }
   return response.json();
 }
+
+export async function getEvents() {
+  const response = await fetch(`${BASE_URL}/events`);
+  if (!response.ok) throw new Error("Could not load events");
+  return response.json();
+}
+
+export async function createEvent(eventData) {
+  const response = await fetch(`${BASE_URL}/events`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(eventData),
+  });
+  if (!response.ok) throw new Error("Could not save event");
+  return response.json();
+}
+
+export async function deleteEvent(id) {
+  const response = await fetch(`${BASE_URL}/events/${id}`, { method: "DELETE" });
+  if (!response.ok) throw new Error("Could not delete event");
+}
