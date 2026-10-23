@@ -45,13 +45,47 @@ export function renderEvents(events) {
     item.dataset.id = event.id;
 
     const info = document.createElement("span");
-    info.textContent = `${event.name} · KES ${event.budget} for ${event.guests} guests (KES ${event.perGuest} per guest)`;
+    info.textContent = `${event.name} · KES ${event.budget} for ${event.guests} guests (KES ${event.perGuest} per guest) · ${event.status}`;
 
     const actions = document.createElement("span");
     actions.className = "card-actions";
-    actions.innerHTML = `<button type="button" class="btn-delete">Delete</button>`;
+    actions.innerHTML = `
+      <button type="button" class="btn-edit btn-outline">Edit</button>
+      <button type="button" class="btn-confirm">${event.status === "confirmed" ? "Unconfirm" : "Confirm"}</button>
+      <button type="button" class="btn-delete">Delete</button>
+    `;
 
     item.append(info, actions);
     list.appendChild(item);
+  });
+}
+
+export function renderReviews(reviews, caterers) {
+  const list = document.getElementById("review-list");
+  list.innerHTML = "";
+
+  if (reviews.length === 0) {
+    list.innerHTML = "<li>No reviews yet.</li>";
+    return;
+  }
+
+  reviews.forEach((review) => {
+    const caterer = caterers.find((item) => item.id === review.catererId);
+    const item = document.createElement("li");
+    const text = document.createElement("span");
+    text.textContent = `${caterer ? caterer.name : "Unknown caterer"} · ★ ${review.rating} · ${review.name}: ${review.comment}`;
+    item.append(text);
+    list.appendChild(item);
+  });
+}
+
+export function fillCatererSelect(caterers) {
+  const select = document.getElementById("review-caterer");
+  select.innerHTML = '<option value="">Choose a caterer</option>';
+  caterers.forEach((caterer) => {
+    const option = document.createElement("option");
+    option.value = caterer.id;
+    option.textContent = caterer.name;
+    select.appendChild(option);
   });
 }
