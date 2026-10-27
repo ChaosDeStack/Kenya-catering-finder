@@ -1,4 +1,7 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://knya-catering-finder.onrender.com"; // <-- CHANGE THIS
 
 export async function getCaterers() {
   const response = await fetch(`${BASE_URL}/caterers`);
